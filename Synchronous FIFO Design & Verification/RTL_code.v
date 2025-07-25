@@ -61,7 +61,7 @@ output reg overflow,underflow);
        
   
   // flag declaration :~ empty , full,overflow, underflow:
-  always@(posedge clk or posedge rst_n)begin 
+  always@(posedge clk )begin 
     if (!rst_n)
              begin 
                overflow = 0;
