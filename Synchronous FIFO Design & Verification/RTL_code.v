@@ -1,24 +1,6 @@
 // Code your design here
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 15.06.2025 18:06:36
-// Design Name: 
-// Module Name: fifo_sync
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
+
 
 
 module FIFO_SYNC(
@@ -78,14 +60,14 @@ output reg overflow,underflow);
       end 
        
   
-  
+  // flag declaration :~ empty , full,overflow, underflow:
   always@(posedge clk or posedge rst_n)begin 
     if (!rst_n)
              begin 
-               overflow = 1'b0;
-               underflow = 1'b0;
-               empty = 1'b0;
-               full = 1'b0;
+               overflow = 0;
+               underflow = 0;
+               empty = 0;
+               full = 0;
              end 
    else begin
            overflow = (full && wr_en);
